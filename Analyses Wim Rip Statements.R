@@ -14,3 +14,15 @@ Season2 <- subset(StatsPSV, Season == "2015/2016")
 
 # Season 2016/2017 data
 Season3 <- subset(StatsPSV, Season == "2016/2017")
+
+# Convert integers to character data type
+StatsPSV[3:4] <- lapply(StatsPSV[3:4], as.character)
+
+# Check whether converting was ok
+str(StatsPSV)
+
+# Convert integers to numeric data type
+StatsPSV[5:11] <- lapply(StatsPSV[5:11], as.numeric)
+
+# Check whether converting was ok
+str(StatsPSV)
