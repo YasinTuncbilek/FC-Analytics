@@ -1,0 +1,1 @@
+## Analyses of Wim Rip (Video-analyst PSV) statements
