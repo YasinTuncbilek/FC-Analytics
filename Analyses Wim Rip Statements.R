@@ -39,7 +39,7 @@ colnames(Table1) <- c("Season", "Chances", "Crosses", "Set piece goals")
 # Check dataframe of Table 1
 data.frame(Table1)
 
-# Create table with mean of possession, chances, crosses, set piece goals and conversion
+# Create table with mean of possession, chances, crosses, set piece goals and conversion per season
 Table2 <- aggregate(cbind(StatsPSV$Possession.PSV...., StatsPSV$Chances.PSV, StatsPSV$Crosses.PSV, StatsPSV$Set.piece.goals.PSV, StatsPSV$Conversion.PSV..w.shots.), list(StatsPSV$Season), FUN = mean)
 
 # Change column names of Table 2
