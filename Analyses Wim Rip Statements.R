@@ -45,6 +45,9 @@ Table2 <- aggregate(cbind(StatsPSV$Possession.PSV...., StatsPSV$Chances.PSV, Sta
 # Change column names of Table 2
 colnames(Table2) <- c("Season", "Possession", "Chances", "Crosses", "Set piece goals", "Conversion")
 
+# Round values in Table 2 to two decimals, exclude first column
+Table2[,-1] <- round(Table2[,-1], 2)
+
 # Check dataframe of Tale 2
 data.frame(Table2)
 
