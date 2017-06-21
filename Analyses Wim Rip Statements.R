@@ -30,25 +30,40 @@ Season3 <- subset(StatsPSV, Season == "2016/2017")
 # Check structure Season 1 subset
 str(Season1)
 
-# Create table with sum of chances, crosses and set piece goals per season
-Table1 <- aggregate(cbind(StatsPSV$Chances.PSV, StatsPSV$Crosses.PSV, StatsPSV$Set.piece.goals.PSV), list(StatsPSV$Season), FUN = sum)
+# Create table with sum of chances, crosses, set piece goals, All shots (excluding blocks) and goals per season
+Table1 <- aggregate(cbind(StatsPSV$Chances.PSV, StatsPSV$Crosses.PSV, StatsPSV$Set.piece.goals.PSV, StatsPSV$Shots.PSV..excl..blocks., StatsPSV$Goals.PSV), list(StatsPSV$Season), FUN = sum)
 
 # Change column names of Table 1
-colnames(Table1) <- c("Season", "Chances", "Crosses", "Set piece goals")
+colnames(Table1) <- c("Season", "Chances", "Crosses", "Set piece goals", "All shots (excluding blocks)", "Goals")
+
+# Check dataframe of Table 1
+data.frame(Table1)
+
+# Create new variable Conversion 
+Table1["Conversion"] <- NA
+
+# Add variable as a column to Table 1
+Table1$Conversion <- (Table1$Goals / Table1$`All shots (excluding blocks)`) * 100
+
+# Round values in Table 1 to two decimals
+Table1$Conversion <- round(Table1$Conversion, 2)
 
 # Check dataframe of Table 1
 data.frame(Table1)
 
 # Create table with mean of possession, chances, crosses, set piece goals and conversion per season
-Table2 <- aggregate(cbind(StatsPSV$Possession.PSV...., StatsPSV$Chances.PSV, StatsPSV$Crosses.PSV, StatsPSV$Set.piece.goals.PSV, StatsPSV$Conversion.PSV..w.shots.), list(StatsPSV$Season), FUN = mean)
+Table2 <- aggregate(cbind(StatsPSV$Possession.PSV...., StatsPSV$Chances.PSV, StatsPSV$Crosses.PSV, StatsPSV$Set.piece.goals.PSV), list(StatsPSV$Season), FUN = mean)
 
 # Change column names of Table 2
-colnames(Table2) <- c("Season", "Possession", "Chances", "Crosses", "Set piece goals", "Conversion")
+colnames(Table2) <- c("Season", "Possession", "Chances", "Crosses", "Set piece goals")
 
 # Round values in Table 2 to two decimals, exclude first column
 Table2[,-1] <- round(Table2[,-1], 2)
 
 # Check dataframe of Tale 2
 data.frame(Table2)
+
+# Create overall table
+Table 3 ()
 
 # Copy table 1 
