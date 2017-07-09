@@ -74,3 +74,4 @@ Table3 <- Table3[ ,c(1, 8, 2:7)]
 
 #Check dataframe of Table 3
 data.frame(Table3)
+
