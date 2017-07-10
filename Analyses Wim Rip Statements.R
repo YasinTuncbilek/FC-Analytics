@@ -72,6 +72,14 @@ colnames(Table3)[8] <- "Possession"
 # Change order of columns (Possession more to the front)
 Table3 <- Table3[ ,c(1, 8, 2:7)]
 
-#Check dataframe of Table 3
+# Check dataframe of Table 3
 data.frame(Table3)
 
+# One-way ANOVA on possession
+analysis1 <- lm(StatsPSV$Possession.PSV....~as.factor(StatsPSV$Season), data = StatsPSV)
+anova(analysis1)
+plot(analysis1, which = 1)
+plot(analysis1, which = 2)
+sresids1 <- rstandard(analysis1)
+hist(sresids1)
+TukeyHSD(aov(analysis1))
