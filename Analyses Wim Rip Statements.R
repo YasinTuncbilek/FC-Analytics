@@ -83,3 +83,5 @@ plot(analysis1, which = 2)
 sresids1 <- rstandard(analysis1)
 hist(sresids1)
 TukeyHSD(aov(analysis1))
+
+mean(Season2$Possession.PSV....)
