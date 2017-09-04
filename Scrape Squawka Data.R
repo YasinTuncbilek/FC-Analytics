@@ -36,13 +36,13 @@ crosses <- querySelectorAll(xmlParse(squawkData[[1]]), "crosses time_slice")
 # Print crosses [[1]]
 crosses[[1]]
 
-# Print example
+# Print crosses
 crosses
 
 # Select xml attributes and values
 data <- xpathSApply(crosses, "//event", xmlAttrs)
 
-out <- lapply(example, function(x){
+out <- lapply(crosses, function(x){
   # handle each event
   if(length(x['event']) > 0){
     res <- lapply(x['event'], function(y){
@@ -55,8 +55,3 @@ out <- lapply(example, function(x){
   }
 }
 )
-
-# Turn off global debugging
-debuggingState(on = FALSE)
-
-
