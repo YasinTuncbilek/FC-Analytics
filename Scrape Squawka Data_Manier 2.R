@@ -18,6 +18,9 @@ goals_attempts <- top[['data_panel']][['filters']][['goals_attempts']]
 # Select crosses
 data_crosses <- xpathSApply(top, "//crosses//event", xmlAttrs)
 
+data_crosses
+
+                            
 # Select all_passes
 data_all_passes <- xpathSApply(top, "//all_passes//event", xmlAttrs)
 
