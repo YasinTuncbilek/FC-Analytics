@@ -20,8 +20,7 @@ data_crosses <- xpathSApply(top, "//crosses//event", xmlAttrs)
 
 data_crosses
 
-                            
-# Select all_passes
+                            # Select all_passes
 data_all_passes <- xpathSApply(top, "//all_passes//event", xmlAttrs)
 
 # Select goals_attempts

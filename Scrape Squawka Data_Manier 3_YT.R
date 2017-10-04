@@ -1,12 +1,14 @@
-#libraries inladen
+# Libraries inladen.
 library('RSelenium')
 library(curl)
 library(XML)
 library(selectr)
-#Deze functie start een webbrowser (server) op een gespecificeerde uitgaande poort. 
-#Om geen problemen te krijgen met de firewall van de laptop zet de poort op as.integer(4444)
-#Bekijk hiervoor de help functie van rsDriver. Sluit het geopende browserwindow af. 
+
+# Deze functie start een webbrowser (server) op een gespecificeerde uitgaande poort. 
+# Om geen problemen te krijgen met de firewall van de laptop zet de poort op as.integer(4444).
+# Bekijk hiervoor de help functie van rsDriver. Sluit het geopende browserwindow af. 
 rsDriver(port = as.integer(4444))
+
 # Nu kan er een object worden gemaakt met daarin de bestuursgegevens van een gespecificeerde browser.
 # Hiervoor gebruiken we de functie remoteDriver(), waarvan de uitkomst toe moet worden gewezen aan een object.
 # Om chrome te gebruiken als de browser, zet als argument: browserName = "chrome"
